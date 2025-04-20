@@ -15,11 +15,11 @@ using Azure.ResourceManager;
 
 /** Private.CloudAppLink Resource Provider management API. */
 @armProviderNamespace
-@service(#{
-  title: "Private.CloudAppLink management service",
-})
+@service(#{ title: "Private.CloudAppLink management service" })
 @versioned(Versions)
 namespace Private.CloudAppLink;
+
+interface Operations extends Azure.ResourceManager.Operations {}
 
 /** The available API versions. */
 enum Versions {
@@ -29,5 +29,3 @@ enum Versions {
   @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v5)
   v2024_08_01_preview: "2024-08-01-preview",
 }
-
-interface Operations extends Azure.ResourceManager.Operations {}

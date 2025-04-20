@@ -17,12 +17,12 @@ model Location is ProxyResource<LocationProperties> {
 }
 
 /** Location Properties */
-model LocationProperties {
-}
+model LocationProperties {}
 
 /** AppLink Release Channel Profile */
 @parentResource(Location)
-model AppLinkReleaseChannelProfile is ProxyResource<AppLinkReleaseChannelProfileProperties> {
+model AppLinkReleaseChannelProfile
+  is ProxyResource<AppLinkReleaseChannelProfileProperties> {
   ...ResourceNameParameter<AppLinkReleaseChannelProfile>;
 }
 
@@ -32,25 +32,24 @@ model AppLinkReleaseChannelProfileProperties {
 }
 
 /** AppLink Revision Channel */
-model AppLinkReleaseChannel{
+model AppLinkReleaseChannel {
   releaseChannel: string;
   revision: string;
   compatibleWith: CompatibleWith[];
 }
 
-/** Compatible With*/
-model CompatibleWith{
+/** Compatible With */
+model CompatibleWith {
   name: string;
   versions: string[];
 }
 
 /** Location operations */
 @armResourceOperations
-interface Locations {
-}
+interface Locations {}
 
 /** AppLinkReleaseChannelProfiles operations */
 @armResourceOperations
 interface AppLinkReleaseChannelProfiles {
-  listByLocation is ArmResourceListByParent<AppLinkReleaseChannelProfile>;
+  // listByLocation is ArmResourceListByParent<AppLinkReleaseChannelProfile>;
 }

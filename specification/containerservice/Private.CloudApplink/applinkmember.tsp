@@ -19,11 +19,11 @@ model AppLinkMember is ProxyResource<AppLinkMemberProperties> {
 
 /** AppLink properties */
 model AppLinkMemberProperties {
-    type: string;
-    metadata: Metadata;
-    internalMetadata: AppLinkMemberInternalMetadata;
-    upgradeProfile: UpgradeProfile;
-    provisioningState?: ProvisioningState;
+  type: string;
+  metadata: Metadata;
+  internalMetadata: AppLinkMemberInternalMetadata;
+  upgradeProfile: UpgradeProfile;
+  provisioningState?: ProvisioningState;
 }
 
 model Metadata {
@@ -46,7 +46,6 @@ model UpgradeProfile {
   mode: UpgradeMode;
 }
 
-
 model AppLinkMemberInternalMetadata {
   umiResource: UMIResource;
   dnsRecordSet: ProvisionResource;
@@ -55,7 +54,7 @@ model AppLinkMemberInternalMetadata {
   mcpNameSpace: string;
 }
 
-model UMIResource{
+model UMIResource {
   umi: ProvisionResource;
   roleAssignments: ProvisionResource[];
 }
